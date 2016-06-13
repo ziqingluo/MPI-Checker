@@ -7,7 +7,7 @@ To invoke the analysis, it is recommended to use the latest [scan-build
 package](https://github.com/rizsotto/scan-build).  You can either use the
 scripts being contained in the LLVM trunk
 (`llvm/tools/clang/tools/scan-build-py/bin`) or install the scripts with 
-`pip install scan-build`. Note that `make install` LLVM copies old
+`pip install scan-build`. Note that on `make install` LLVM copies old
 Perl versions of the scripts into `/usr/local/bin` which therefore 
 overwrite the recent pip versions.
 

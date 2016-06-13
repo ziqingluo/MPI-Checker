@@ -50,8 +50,10 @@ void communicate1() {
 
     if (swr.rank == 0) {
         MPI_Isend(&buf, 1, MPI_INT, rank + 1, 1, MPI_COMM_WORLD, &req[0]);
+        MPI_Isend(&buf, 1, MPI_INT, rank + 1, 1, MPI_COMM_WORLD, &req[0]);
 
     } else if (swr.rank == 1) {
+        MPI_Irecv(&buf, 1, MPI_INT, rank - 1, 1, MPI_COMM_WORLD, &req[1]);
         MPI_Irecv(&buf, 1, MPI_INT, rank - 1, 1, MPI_COMM_WORLD, &req[1]);
     }
 

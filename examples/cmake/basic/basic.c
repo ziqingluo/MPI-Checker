@@ -75,6 +75,10 @@ void communicate2() {
 
 int main(int argc, char *argv[]) {
     MPI_Init(&argc, &argv);
+    MPI_Request req;
+    MPI_Isend(&buf, 1, MPI_INT, rank + 1, 1, MPI_COMM_WORLD, &req);
+    MPI_Isend(&buf, 1, MPI_INT, rank + 1, 1, MPI_COMM_WORLD, &req);
+
     communicate1();
     communicate2();
 
