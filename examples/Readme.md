@@ -1,17 +1,34 @@
+### !
+This page is currently being updated.
+
+
+### Invoke analysis
+To invoke the analysis, it is recommended to use the latest [scan-build
+package](https://github.com/rizsotto/scan-build).  You can either use the
+scripts being contained in the LLVM trunk
+(`llvm/tools/clang/tools/scan-build-py/bin`) or install the scripts with 
+`pip install scan-build`. Note that `make install` LLVM copies old
+Perl versions of the scripts into `/usr/local/bin` which therefore 
+overwrite the recent pip versions.
+
 ### Examples
 
-Remember that only built source files are analyzed. To do a complete analysis
-you have to do a complete build. Clean your analysis target to ensure this. All
-example builds work with a flag `ANALYZE=x` passed to trigger the analysis.
-If there are any bugs found your browser will automatically open showing an
-overview of the detected erros. Those can be clicked to inspect them in detail.
+There are distinct ways to invoke the Clang Static Analyzer.
+- Call `scan-build --enable-checker=optin.mpi.MPI-Checker (ninja|make|..)`
+  In case of invoking `scan-build` only built sources files are
+  analyzed. To do a complete analysis you have to do a complete build. Clean
+  your analysis target to ensure this.
 
-#### CMake
-Inspect one of the `CMakeLists.txt` files to see how it is set up for MPI and
-static analysis.  To invoke the MPI-Checker add [this]
-(https://github.com/0ax1/MPI-Checker/blob/master/examples/analyze.sh) to your
-`.zshrc`. Then run `checkMPI` in the projects `CMakeLists.txt` path.
+Please see `scan-build -h` for further settings.
 
-#### Make
-If you use Make you can do ```scan-build --use-analyzer `which clang`
--enable-checker mpi.MPI-Checker -V make debug ANALYZE=1```.
+
+
+<!-- #### CMake -->
+<!-- Inspect one of the `CMakeLists.txt` files to see how it is set up for MPI and -->
+<!-- static analysis.  To invoke the MPI-Checker add [this] -->
+<!-- (https://github.com/0ax1/MPI-Checker/blob/master/examples/analyze.sh) to your -->
+<!-- `.zshrc`. Then run `checkMPI` in the projects `CMakeLists.txt` path. -->
+
+<!-- #### Make -->
+<!-- If you use Make you can do ```scan-build --use-analyzer `which clang` -->
+<!-- -enable-checker mpi.MPI-Checker -V make debug ANALYZE=1```. -->
