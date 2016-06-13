@@ -77,10 +77,12 @@ int main(int argc, char *argv[]) {
     MPI_Init(&argc, &argv);
     MPI_Request req;
     MPI_Isend(&buf, 1, MPI_INT, rank + 1, 1, MPI_COMM_WORLD, &req);
-    MPI_Isend(&buf, 1, MPI_INT, rank + 1, 1, MPI_COMM_WORLD, &req);
 
     communicate1();
     communicate2();
+
+    MPI_Request req2;
+    MPI_Wait(&req2, MPI_STATUS_IGNORE);
 
     MPI_Finalize();
     return 0;

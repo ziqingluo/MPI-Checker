@@ -1,7 +1,0 @@
-[
-    {
-        "command": "cc -c -std=c99 -Wall -Wextra -D NDEBUG -O3 -I ./ -o build/release/basic.o -I/usr/local/Cellar/open-mpi/1.10.2_1/include basic.c",
-        "directory": "/Users/lx/Documents/Text/Code/Open_Source/mpi_checker_git/examples/make/basic",
-        "file": "/Users/lx/Documents/Text/Code/Open_Source/mpi_checker_git/examples/make/basic/basic.c"
-    }
-]
