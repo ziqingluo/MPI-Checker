@@ -4,8 +4,9 @@ To invoke the Clang Static Analyzer, it is recommended to use the latest
 use the scripts being contained in LLVM trunk
 (`llvm/tools/clang/tools/scan-build-py/bin`) or install the scripts with `pip
 install scan-build`. Note that on `make install` LLVM copies old Perl versions
-of the scripts to `/usr/local/bin` which therefore overwrite the recent pip
-versions.
+of the scripts to `/usr/local/bin` which therefore might overwrite the pip
+versions. To install a pip package to a specific path, run 
+`pip install --install-option="--prefix=/usr/local/bin/scan-build-package" scan-build`.
 
 ### Invoke analysis
 
