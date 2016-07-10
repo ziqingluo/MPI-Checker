@@ -1,14 +1,14 @@
 # MPI-Checker
 
-A static analysis checker to verify the correct usage of the
-[MPI](https://en.wikipedia.org/wiki/Message_Passing_Interface)
-API in C and C++ code, based on Clang’s
-[Static Analyzer](http://clang-analyzer.llvm.org/).
+Verify the correct usage of the
+[MPI](https://en.wikipedia.org/wiki/Message_Passing_Interface) API in C and C++
+code, with checks based on [Clang’s Static
+Analyzer](http://clang-analyzer.llvm.org/) and
+[Clang-Tidy](http://clang.llvm.org/extra/clang-tidy/).
 
 <img src="https://github.com/0ax1/MPI-Checker/blob/master/screenshots/missingwait.jpg" height="450">
 
-<br>The path-sensitive checks have been [merged](https://github.com/llvm-mirror/clang/commit/3016fc901ddf543adec9c27bd98b8d33ff1933b5)
-and are available in the LLVM trunk. The AST-based checks are on their way.
+<br>
 
 ## Integrated checks
 #### Path-Sensitive-Checks
@@ -16,10 +16,15 @@ and are available in the LLVM trunk. The AST-based checks are on their way.
 - `missing wait`: Nonblocking call without matching wait.
 - `unmatched wait`: Waiting for a request that was never used by a nonblocking call.
 
+The path-sensitive checks have been
+[merged](https://github.com/llvm-mirror/clang/commit/3016fc901ddf543adec9c27bd98b8d33ff1933b5)
+into Clang's Static Analyzer and are available in the LLVM trunk.
+
 #### AST-Checks
 - `type mismatch`: Buffer type and specified MPI type do not match.
-- `incorrect buffer referencing`: B-type is incorrectly referenced when passed to an MPI function.
-- `invalid argument type`: Non integer type used where only integer types are allowed.
+- `incorrect buffer referencing`: Buffer is incorrectly referenced when passed to an MPI function.
+
+The AST-based checks are on their way to get merged into Clang-Tidy.
 
 ## Limitations
 - No assumption about run time dependent results can be made.
