@@ -30,5 +30,5 @@ Clang-Tidy:
 ```
 llvm/tools/clang/tools/extra/clang-tidy/tool/run-clang-tidy.py \
     -clang-tidy-binary=/path/to/clang-tidy \
-    -checks='-*,misc-mpi-type-mismatch,misc-mpi-buffer-deref'
+    -checks='-*,mpi-type-mismatch,mpi-buffer-deref'
 ```
