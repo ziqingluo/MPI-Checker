@@ -16,9 +16,9 @@ Analyzer](http://clang-analyzer.llvm.org/) and
 - `missing wait`: Nonblocking call without matching wait.
 - `unmatched wait`: Waiting for a request that was never used by a nonblocking call.
 
-The path-sensitive checks have been
-[merged](https://github.com/llvm-mirror/clang/commit/3016fc901ddf543adec9c27bd98b8d33ff1933b5)
-into Clang's Static Analyzer and are available in the LLVM trunk.
+The path-sensitive checks have been merged into Clang's Static Analyzer and are
+available since LLVM 3.9. [[1](https://github.com/llvm-mirror/clang/tree/master/lib/StaticAnalyzer/Checkers/MPI-Checker),
+[2](https://github.com/llvm-mirror/clang/tree/master/test/Analysis)]
 
 #### AST-Checks
 - `type mismatch`: Buffer type and specified MPI type do not match.
