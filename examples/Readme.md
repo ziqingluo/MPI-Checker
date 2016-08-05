@@ -5,7 +5,8 @@ either use the scripts being contained in LLVM trunk
 (`llvm/tools/clang/tools/scan-build-py/bin`) or install the scripts with `pip
 install scan-build`. Note that on `make install` LLVM copies old Perl versions
 of the scripts to `/usr/local/bin` which therefore might overwrite versions
-installed with pip.
+installed with pip. To run Clang-Tidy on a project, use the `run-clang-tidy.py`
+script contained in `llvm/tools/clang/tools/extra/clang-tidy/tool`.
 
 ### Invoke analysis
 
