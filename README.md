@@ -23,7 +23,8 @@ available since LLVM 3.9.
 - `type mismatch`: Buffer type and specified MPI type do not match.
 - `incorrect buffer referencing`: Buffer is incorrectly referenced when passed to an MPI function.
 
-The AST-based checks are on their way to get merged into Clang-Tidy.
+The AST-based checks have been merged into Clang-Tidy and are available in
+the LLVM trunk.
 
 ## Limitations
 - No assumption about run time dependent results can be made.
@@ -47,6 +48,9 @@ different translation unit than they are used in. Regarding the current range of
 checks integrated in MPI-Checker, those memory regions cannot be taken into
 account.  Definitions in header files are conceptually inlined and therefore
 considered during analysis in the translation units that include the headers.
+
+## Usage
+[How to apply the checks](https://github.com/0ax1/MPI-Checker/tree/master/examples)
 
 ## Paper
 [MPI-Checker – Static Analysis for MPI](https://dl.acm.org/citation.cfm?id=2833157.2833159&coll=DL&dl=GUIDE&CFID=562722438&CFTOKEN=16030439)
